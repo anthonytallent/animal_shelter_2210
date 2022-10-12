@@ -27,7 +27,7 @@ RSpec.describe Shelter do
     end
 
     it 'has no pets by default' do
-      skip
+
 
       shelter = Shelter.new('Denver Animal Shelter', 5)
       expect(shelter.pets).to eq []
@@ -37,7 +37,7 @@ RSpec.describe Shelter do
   # Iteration 2
   describe '#add_pet' do
     it 'returns a list of pets' do
-      skip
+
 
       shelter = Shelter.new('Denver Animal Shelter', 5)
       shelter.add_pet('Salem')
@@ -51,7 +51,7 @@ RSpec.describe Shelter do
 
   describe '#call_pets' do
       it 'returns a list of names with exclamation points appended' do
-        skip
+
 
         shelter = Shelter.new('Denver Animal Shelter', 5)
         shelter.add_pet('Salem')
@@ -62,4 +62,23 @@ RSpec.describe Shelter do
         expect(shelter.call_pets).to eq(['Salem!', 'Beethoven!', 'Spot!', 'Jonesy!'])
       end
     end
+
+    describe 'over_capacity?' do
+      it 'will return true or false if the venue has more patrons than the capacity' do
+
+
+        shelter = Shelter.new('Denver Animal Shelter', 3)
+        shelter.add_pet('Salem')
+        shelter.add_pet('Beethoven')
+
+        expect(shelter.over_capacity?).to eq(false)
+
+        shelter.add_pet('Spot')
+        shelter.add_pet('Jonesy')
+
+        expect(shelter.over_capacity?).to eq(true)
+      end
+    end
+
+
 end
