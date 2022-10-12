@@ -20,7 +20,7 @@ RSpec.describe Shelter do
     end
 
     it 'can read the capacity' do
-      skip
+
 
       shelter = Shelter.new('Denver Animal Shelter', 5)
       expect(shelter.capacity).to eq(5)
