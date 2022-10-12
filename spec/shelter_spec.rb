@@ -13,7 +13,7 @@ RSpec.describe Shelter do
     end
 
     it 'can read the name' do
-      skip
+
 
       shelter = Shelter.new('Denver Animal Shelter', 5)
       expect(shelter.name).to eq('Denver Animal Shelter')
